@@ -1,12 +1,16 @@
 package com.daggereg1.model;
 
+import com.daggereg1.module.PerActivity;
 import com.daggereg1.utils.LogHelper;
 
 import javax.inject.Inject;
 
+@PerActivity
 public class Car {
 
     private static final String CarTag = "car_tag";
+
+    @Inject Driver driver;
 
     @Inject
     Engine engine;
@@ -14,7 +18,8 @@ public class Car {
 
 
     @Inject
-    public Car(Engine engine, Wheels wheels) {
+    public Car(Driver driver,Engine engine, Wheels wheels) {
+        this.driver = driver;
         this.engine = engine;
         this.wheels = wheels;
     }
@@ -27,7 +32,8 @@ public class Car {
 
     public void drive(){
         engine.start();
-        LogHelper.showLogData("drive the car...");
+        LogHelper.showLogData(driver +" drives "+this);
+       // LogHelper.showLogData("drive the car...");
     }
 
 }
