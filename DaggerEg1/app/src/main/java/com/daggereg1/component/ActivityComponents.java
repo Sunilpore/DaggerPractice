@@ -16,6 +16,10 @@ import dagger.Component;
 //Here we cannot put PetrolEngineModule and DiselEngineModule inside Component module
 // else dagger will throw duplicate error
 
+/**
+ *@AppComponent Here AppComponent class provide Driver instance which create Single instance through out application
+ */
+
 @PerActivity
 @Component(dependencies = AppComponent.class, modules ={WheelsModule.class, PetrolEngineModule.class/*, DiselEngineModule.class*/})
 public interface ActivityComponents {

@@ -5,7 +5,6 @@ import android.os.Bundle;
 
 import com.daggereg1.component.ActivityComponents;
 import com.daggereg1.component.DaggerActivityComponents;
-import com.daggereg1.component.DaggerAppComponent;
 import com.daggereg1.model.Car;
 
 import javax.inject.Inject;
