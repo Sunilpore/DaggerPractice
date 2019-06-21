@@ -12,6 +12,11 @@ import dagger.Component;
 @Component(modules = {/*DriverModule.class*/})
 public interface AppComponent {
 
+
+    /**It return activityComponent into subComponent and able to access whole dependencies graph of AppComponent
+     *by removing below driver method
+    */
+
     Driver getDriver();
 
 }
