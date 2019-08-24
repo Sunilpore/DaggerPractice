@@ -4,8 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.daggereg1.component.ActivityComponents;
-import com.daggereg1.component.DaggerActivityComponents;
+import com.daggereg1.component.AppComponent;
 import com.daggereg1.model.Car;
+import com.daggereg1.module.DiselEngineModule;
 
 import javax.inject.Inject;
 
@@ -32,13 +33,10 @@ public class MainActivity extends AppCompatActivity {
                 .engineCapacity(1400)
                 .build();*/
 
-        //ActivityComponents carComponents = ((ExampleApp)getApplication()).getAppComponent();
+        //AppComponent carComponents = ((ExampleApp)getApplication()).getAppComponent();
 
-        ActivityComponents components = DaggerActivityComponents.builder()
-                                        .horsePower(200)
-                                        .engineCapacity(1700)
-                                        .appComponent(((ExampleApp) getApplication()).getAppComponent())
-                                        .build();
+        ActivityComponents components = ((ExampleApp)getApplication()).getAppComponent()
+                                        .getActivityComponent(new DiselEngineModule(120));
 
         //ActivityComponents carComponents = null;
         components.inject(this);

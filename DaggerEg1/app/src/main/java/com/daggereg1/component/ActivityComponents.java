@@ -21,6 +21,7 @@ import dagger.Subcomponent;
 /**
  *@AppComponent Here AppComponent class provide Driver instance which create Single instance through out application
  * @SubComponent It can access all the objects of the Parent component.
+                 Means we can able to remove explicit getDriver() method from AppComponent
  */
 
 @PerActivity

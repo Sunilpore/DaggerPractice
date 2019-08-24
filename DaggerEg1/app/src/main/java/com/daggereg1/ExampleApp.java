@@ -15,6 +15,7 @@ public class ExampleApp extends Application {
     public void onCreate() {
         super.onCreate();
 
+        //If Component class don't have any state or module then use .create() or else use .build()
         component = DaggerAppComponent.create();
     }
 
