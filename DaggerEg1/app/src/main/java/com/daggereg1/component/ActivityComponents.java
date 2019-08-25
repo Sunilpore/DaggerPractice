@@ -25,7 +25,7 @@ import dagger.Subcomponent;
  */
 
 @PerActivity
-@Subcomponent(/*dependencies = AppComponent.class,*/ modules ={WheelsModule.class, /*PetrolEngineModule.class,*/ DiselEngineModule.class})
+@Subcomponent(/*dependencies = AppComponent.class,*/ modules ={WheelsModule.class, PetrolEngineModule.class/* ,DiselEngineModule.class*/})
 public interface ActivityComponents {
 
     //So here we use @SubComponent instead of 'dependencies' of @Component
@@ -37,7 +37,7 @@ public interface ActivityComponents {
 
 
 
-    /*@Component.Builder
+    @Subcomponent.Builder
     interface Builder {
 
         @BindsInstance
@@ -46,9 +46,9 @@ public interface ActivityComponents {
         @BindsInstance
         Builder engineCapacity(@Named("engine capacity") int engineCapacity);
 
-        Builder appComponent(AppComponent appComponent);
+        //Builder appComponent(AppComponent appComponent);
 
         ActivityComponents build();
-    }*/
+    }
 
  }

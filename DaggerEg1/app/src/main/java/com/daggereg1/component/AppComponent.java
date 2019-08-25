@@ -1,7 +1,6 @@
 package com.daggereg1.component;
 
 import com.daggereg1.model.Driver;
-import com.daggereg1.module.DiselEngineModule;
 import com.daggereg1.module.DriverModule;
 
 import javax.inject.Inject;
@@ -10,7 +9,7 @@ import javax.inject.Singleton;
 import dagger.Component;
 
 @Singleton
-@Component(modules = {/*DriverModule.class*/})
+@Component(modules = {DriverModule.class})
 public interface AppComponent {
 
 
@@ -29,5 +28,5 @@ public interface AppComponent {
         Our ActivityComponent will automatically access all of them
      */
 
-    ActivityComponents getActivityComponent(DiselEngineModule diselEngineModule);
+    ActivityComponents.Builder getActivityComponentBuilder();
 }

@@ -10,21 +10,21 @@ import dagger.Provides;
 @Module
 public abstract class DriverModule {
 
-    /*@Provides
+    @Provides
     @Singleton
     static Driver provideDriver(){
         return new Driver();
-    }*/
+    }
 
 
     //While using construction injection here, we have to provide @Singleton annotation inside Driver.class
     //which points below method to provide its instance
     //While using above static method we don't need to
 
-    @Provides
+    /*@Provides
     @Singleton
     Driver provideDriver(Driver driver){
         return driver;
-    }
+    }*/
 
 }
