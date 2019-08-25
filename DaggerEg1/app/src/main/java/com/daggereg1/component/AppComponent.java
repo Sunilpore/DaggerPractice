@@ -29,4 +29,11 @@ public interface AppComponent {
      */
 
     ActivityComponents.Factory getActivityComponentFactory();
+
+    @Component.Factory
+    interface Factory {
+
+        AppComponent create(DriverModule driverModule);
+    }
+
 }

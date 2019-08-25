@@ -5,6 +5,7 @@ import android.app.Application;
 import com.daggereg1.component.ActivityComponents;
 import com.daggereg1.component.AppComponent;
 import com.daggereg1.component.DaggerAppComponent;
+import com.daggereg1.module.DriverModule;
 
 public class ExampleApp extends Application {
 
@@ -16,7 +17,7 @@ public class ExampleApp extends Application {
         super.onCreate();
 
         //If Component class don't have any state or module then use .create() or else use .build()
-        component = DaggerAppComponent.create();
+        component = DaggerAppComponent.factory().create(new DriverModule("Petrick"));
     }
 
 

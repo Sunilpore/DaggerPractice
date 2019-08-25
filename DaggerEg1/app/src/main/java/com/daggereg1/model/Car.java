@@ -32,7 +32,7 @@ public class Car {
 
     public void drive(){
         engine.start();
-        LogHelper.showLogData(driver +" drives "+this);
+        LogHelper.showLogData(driver +" "+driver.name+" drives "+this);
        // LogHelper.showLogData("drive the car...");
     }
 
