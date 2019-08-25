@@ -28,5 +28,5 @@ public interface AppComponent {
         Our ActivityComponent will automatically access all of them
      */
 
-    ActivityComponents.Builder getActivityComponentBuilder();
+    ActivityComponents.Factory getActivityComponentFactory();
 }

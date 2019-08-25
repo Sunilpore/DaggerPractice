@@ -35,11 +35,10 @@ public class MainActivity extends AppCompatActivity {
 
         //AppComponent carComponents = ((ExampleApp)getApplication()).getAppComponent();
 
+        //Here we use @Subcomponent.Factory method
         ActivityComponents components = ((ExampleApp)getApplication()).getAppComponent()
-                                        .getActivityComponentBuilder()
-                                        .horsePower(150)
-                                        .engineCapacity(1400)
-                                        .build();
+                                        .getActivityComponentFactory()
+                                        .create(150,1400);
 
         //ActivityComponents carComponents = null;
         components.inject(this);

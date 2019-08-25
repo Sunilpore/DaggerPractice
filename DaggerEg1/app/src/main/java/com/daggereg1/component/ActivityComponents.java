@@ -37,7 +37,7 @@ public interface ActivityComponents {
 
 
 
-    @Subcomponent.Builder
+    /*@Subcomponent.Builder
     interface Builder {
 
         @BindsInstance
@@ -49,6 +49,20 @@ public interface ActivityComponents {
         //Builder appComponent(AppComponent appComponent);
 
         ActivityComponents build();
+    }*/
+
+
+    /*
+    Advatage:-
+        1. Factory provide compile time error while, when we use builder and forget to couple any builder method
+        then it will not detected at compile time instead we get run-time exception beacuse of missing method.
+     */
+
+    @Subcomponent.Factory
+    interface Factory {
+
+        ActivityComponents create ( @BindsInstance @Named("horse power") int horsePower,
+                                    @BindsInstance @Named("engine capacity") int engineCapacity);
     }
 
  }
